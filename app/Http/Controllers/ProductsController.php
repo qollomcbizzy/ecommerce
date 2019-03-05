@@ -16,11 +16,12 @@ class ProductsController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function Products(){
-        $product = DB::table('products')->get();
+       // $product = DB::table('products')->get();
+        $product = PRODUCT::paginate(20);
         $department = DB::table('departments')->get();
         $color=DB::table('attribute_value')->where("attribute_id",2)->get();
         $Size=DB::table('attribute_value')->where("attribute_id",1)->get();
-        return view('pages.products',['product' => $product])->with('department',$department)->with('color',$color)->with('size',$Size);
+        return view('pages.products',['products' => $product])->with('department',$department)->with('color',$color)->with('size',$Size);
     }
     public function Product($id){
         $id =$id;

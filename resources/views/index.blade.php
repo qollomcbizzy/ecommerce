@@ -1,23 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-  #contentoverlay{
-     opacity:0.5;
-
-  }
-  #contentoverlay > div{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-  }
-  #contentoverlay > div > button{
-    width:60px;
-    height:30px;
-    border-radius:10px;
-  }
-</style>
 <div style="margin-top:2%">
 <div class="card text-white">
   <img class="card-img" src="{{ asset('Images/background/backgroundimage2.jpg')}}" alt="Card image" id="contentoverlay">
