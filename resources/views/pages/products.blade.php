@@ -159,24 +159,17 @@
                     dataType:'json',
                     success:function(data){
                         $("#products").empty();
-                        console.log(data);
+                       // console.log(data);
                        //empty the category if there is data
                         $.each(data,function(index,productdata){
                             var img = '<img class="card-img-top" src="{{asset(Storage::url('product_images'))}}/'+productdata.thumbnail+'">';
-                           $("#products").append("<div class='card col-3 m-2'><div class='card-header'>"+productdata.name+"<p style='float:right'><b>Price:&nbsp;"+productdata.price+"</b></div><div class='card-body'>"+img+productdata.description +"</div><div class='card-footer row'><a href='/product/"+productdata.product_id+"' class='col-3'><Button class='btn btn-outline-secondary'>View Product</Button></a><Button class='btn btn-outline-success' id='addcart' value="+productdata.product_id+">Add to cart<i class='fa fa-cart-arrow-down'></i></Button></div></div>");
+                           $("#products").append("<div class='card col-3 m-2'><div class='card-header'>"+productdata.name+"<p style='float:right'><b>Price:&nbsp;"+productdata.price+"</b></div><div class='card-body'>"+img+productdata.description +"</div><div class='card-footer row'><a href='/product/"+productdata.product_id+"' class='col-3'><Button class='btn btn-outline-secondary'>View Product</Button></a><a href='/product/addCart/"+productdata.product_id+"' class='col-3'><Button class='btn btn-outline-success' id='addcart' value="+productdata.product_id+">Add to cart<i class='fa fa-cart-arrow-down'></i></Button></a></div></div>");
                     
                         });
 
                     }
                     
                 })
-            });
-
-
-            //add to cart
-            $("#addcart").click(function(){
-                //var productid = $("#addcart").val();
-                alert("hello");
             });
       })
     </script>
