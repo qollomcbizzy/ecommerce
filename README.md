@@ -1,7 +1,8 @@
 # Ecommerce
 ## Framework used for coding
 ### Frontend
-```{CSS and Bootstrap 4.0}```
+```{CSS3 and Bootstrap 4.0}```
 ```{laravel 5.7 }```
-####Backend
+```{Javascript,Ajax}```
+#### Backend
 ```{laravel 5.7}```
