@@ -1,5 +1,5 @@
 <?php
-$DATABASE_URL = parse_url(getenv("postgres://uziruvdoejysib:5f68753b2726734f58216c5b2d108d5fd75c39fbc4292eb0f5c424ab22b13fba@ec2-54-83-3-56.compute-1.amazonaws.com:5432/d4vne98cguart7"));
+$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
 return [
 
     /*
@@ -56,18 +56,16 @@ return [
             'engine' => null,
         ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => $DATABASE_URL["ec2-54-83-3-56.compute-1.amazonaws.com"],
-            'port' => $DATABASE_URL["5432"],
-            'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["uziruvdoejysib"],
-            'password' => $DATABASE_URL["5f68753b2726734f58216c5b2d108d5fd75c39fbc4292eb0f5c424ab22b13fba"],
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'require',
-        ],
+        'pgsql' => array(
+            'driver'   => 'pgsql',
+            'host'     => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ),
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
